@@ -13,12 +13,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    @IBOutlet weak var topCaptionTextField: UITextField!
    @IBOutlet weak var bottomCaptionTextField: UITextField!
    @IBOutlet weak var imageView: UIImageView!
+   @IBOutlet weak var cameraButton: UIBarButtonItem!
    
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view.
    }
 
+   override func viewWillAppear(_ animated: Bool) {
+      cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+   }
+   
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
       print("share button tapped")
    }
