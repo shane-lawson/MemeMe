@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
 
    @IBOutlet weak var topCaptionTextField: UITextField!
    @IBOutlet weak var bottomCaptionTextField: UITextField!
@@ -17,7 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      // Do any additional setup after loading the view.
+      topCaptionTextField.delegate = self
+      bottomCaptionTextField.delegate = self
    }
 
    override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
       dismiss(animated: true, completion: nil)
+   }
+   
+   // MARK: - UITextFieldDelegate
+   
+   func textFieldDidBeginEditing(_ textField: UITextField) {
+      textField.text = ""
+   }
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      textField.resignFirstResponder()
+      return true
    }
 }
 
