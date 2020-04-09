@@ -18,28 +18,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-DS-DED">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRt-3P-H8k">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Ygc-8k-YNC"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem systemItem="flexibleSpace" id="qad-g8-P0w"/>
-                                    <barButtonItem image="camera.fill" catalog="system" id="1Ks-IS-PjZ"/>
-                                    <barButtonItem systemItem="flexibleSpace" id="IEd-mJ-nOS"/>
-                                    <barButtonItem title="Album" id="e3F-Ec-eka"/>
-                                    <barButtonItem systemItem="flexibleSpace" id="n17-i5-2zN"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-Pi-SdX">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-Pi-SdX" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2OH-ed-3Ix"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="Iei-sm-dHC"/>
+                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="Iei-sm-dHC">
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" id="HMX-18-1SI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="1pL-KZ-lm6"/>
-                                    <barButtonItem title="Cancel" id="Ylr-sL-xV8"/>
+                                    <barButtonItem title="Cancel" id="Ylr-sL-xV8">
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" id="jWs-gz-bef"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZK-t9-jh8">
@@ -52,6 +47,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRt-3P-H8k" userLabel="Bottom Toolbar">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ygc-8k-YNC"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="qad-g8-P0w"/>
+                                    <barButtonItem image="camera.fill" catalog="system" id="1Ks-IS-PjZ">
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" id="YWv-X0-cT4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="IEd-mJ-nOS"/>
+                                    <barButtonItem title="Album" id="e3F-Ec-eka">
+                                        <connections>
+                                            <action selector="albumButtonTapped:" destination="BYZ-38-t0r" id="obZ-Jc-c9d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="n17-i5-2zN"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -74,6 +90,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomCaptionTextField" destination="Z13-38-qdl" id="f4L-2e-4jM"/>
+                        <outlet property="imageView" destination="N1X-DS-DED" id="MUy-7s-RuB"/>
+                        <outlet property="topCaptionTextField" destination="ZZK-t9-jh8" id="MWf-5p-peO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
