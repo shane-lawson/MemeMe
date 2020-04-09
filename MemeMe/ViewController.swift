@@ -29,7 +29,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    }
    
    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-      print("cancel button tapped")
+      topCaptionTextField.text = "TOP"
+      bottomCaptionTextField.text = "BOTTOM"
+      imageView.image = nil
    }
    
    @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
