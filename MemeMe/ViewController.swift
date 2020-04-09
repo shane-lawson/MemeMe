@@ -10,15 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
 
-   @IBOutlet weak var topCaptionTextField: UITextField!
-   @IBOutlet weak var bottomCaptionTextField: UITextField!
+   @IBOutlet weak var topCaption: UITextField!
+   @IBOutlet weak var bottomCaption: UITextField!
    @IBOutlet weak var imageView: UIImageView!
    @IBOutlet weak var cameraButton: UIBarButtonItem!
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      topCaptionTextField.delegate = self
-      bottomCaptionTextField.delegate = self
+      configureMemeCaption(topCaption)
+      configureMemeCaption(bottomCaption)
    }
 
    override func viewWillAppear(_ animated: Bool) {
@@ -30,8 +30,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    }
    
    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-      topCaptionTextField.text = "TOP"
-      bottomCaptionTextField.text = "BOTTOM"
+      topCaption.text = "TOP"
+      bottomCaption.text = "BOTTOM"
       imageView.image = nil
    }
    
@@ -48,6 +48,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
       imagePickerController.sourceType = source
       imagePickerController.delegate = self
       return imagePickerController
+   }
+   
+   fileprivate func configureMemeCaption(_ textField: UITextField) {
+      textField.delegate = self
+      textField.defaultTextAttributes = [
+         .strokeColor: UIColor.black,
+         .foregroundColor: UIColor.white,
+         .strokeWidth: -5.0,
+         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+      ]
+      textField.textAlignment = .center
    }
    
    // MARK: - UIImagePickerControllerDelegate

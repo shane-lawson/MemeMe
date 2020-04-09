@@ -91,10 +91,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="bottomCaptionTextField" destination="Z13-38-qdl" id="f4L-2e-4jM"/>
+                        <outlet property="bottomCaption" destination="Z13-38-qdl" id="f4L-2e-4jM"/>
                         <outlet property="cameraButton" destination="1Ks-IS-PjZ" id="Veh-tJ-nfC"/>
                         <outlet property="imageView" destination="N1X-DS-DED" id="MUy-7s-RuB"/>
-                        <outlet property="topCaptionTextField" destination="ZZK-t9-jh8" id="MWf-5p-peO"/>
+                        <outlet property="topCaption" destination="ZZK-t9-jh8" id="MWf-5p-peO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
