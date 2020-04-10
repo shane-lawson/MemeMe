@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+      imageView.contentMode = .scaleAspectFit
       subscribeToKeyboardNotification(of: .willShow)
       subscribeToKeyboardNotification(of: .willHide)
    }
