@@ -73,6 +73,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
          .strokeWidth: -5.0,
          .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
       ]
+      textField.adjustsFontSizeToFitWidth = true
+      textField.minimumFontSize = 17.0
       textField.textAlignment = .center
    }
    
