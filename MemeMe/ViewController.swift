@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    @IBOutlet weak var bottomCaption: UITextField!
    @IBOutlet weak var imageView: UIImageView!
    @IBOutlet weak var cameraButton: UIBarButtonItem!
+   @IBOutlet var toolbars: [UIToolbar]!
    
    enum KeyboardNotificationType {
       case willShow
@@ -41,7 +42,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    }
    
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
-      print("share button tapped")
+      toolbars.forEach {$0.isHidden = true}
+      UIGraphicsBeginImageContext(view.frame.size)
+      view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
+      let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+      UIGraphicsEndImageContext()
+      toolbars.forEach {$0.isHidden = false}
+      
+      let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+      activityViewController.completionWithItemsHandler = { _, completed, _, _ in
+         if completed {
+            self.saveMeme(memedImage)
+         }
+      }
+      present(activityViewController, animated: true, completion: nil)
    }
    
    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
@@ -56,6 +70,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    @IBAction func albumButtonTapped(_ sender: UIBarButtonItem) {
       present(createImagePickerControllerWith(source: .photoLibrary), animated: true, completion: nil)
+   }
+   
+   fileprivate func saveMeme(_ memedImage: UIImage) {
+      _ = Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage)
    }
    
    fileprivate func createImagePickerControllerWith(source: UIImagePickerController.SourceType) -> UIImagePickerController {
@@ -138,4 +156,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
       return true
    }
 }
-
