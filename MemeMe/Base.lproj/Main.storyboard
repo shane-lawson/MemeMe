@@ -29,17 +29,24 @@
                                             <action selector="shareButtonTapped:" destination="BYZ-38-t0r" id="HMX-18-1SI"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="jlu-aJ-zoM" userLabel="Share Button">
+                                    <barButtonItem width="30" style="plain" systemItem="fixedSpace" id="BEb-ZI-552"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dxB-Sr-uaz"/>
+                                    <barButtonItem image="minus" catalog="system" id="j6V-lc-LYn" userLabel="Font Button">
                                         <connections>
-                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" id="Olh-Qe-au2"/>
+                                            <action selector="decreaseFontSize:" destination="BYZ-38-t0r" id="muP-ZY-lWQ"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Item" image="pencil.tip.crop.circle" catalog="system" id="SXf-WA-EbM" userLabel="Share Button">
+                                    <barButtonItem image="textformat" catalog="system" id="pr5-hC-Fne" userLabel="Font Button">
                                         <connections>
-                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" id="sah-g7-Hsp"/>
+                                            <action selector="fontButtonTapped:" destination="BYZ-38-t0r" id="el9-3Q-lNS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="1pL-KZ-lm6"/>
+                                    <barButtonItem image="plus" catalog="system" id="pKj-EG-ofF" userLabel="Font Button">
+                                        <connections>
+                                            <action selector="increaseFontSize:" destination="BYZ-38-t0r" id="Klq-ys-uAq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JlZ-e4-zIO"/>
                                     <barButtonItem title="Cancel" id="Ylr-sL-xV8">
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" id="jWs-gz-bef"/>
@@ -120,7 +127,9 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
-        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="textformat" catalog="system" width="128" height="80"/>
     </resources>
 </document>

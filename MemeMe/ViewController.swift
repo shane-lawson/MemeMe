@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate {
 
    @IBOutlet weak var topCaption: UITextField!
    @IBOutlet weak var bottomCaption: UITextField!
@@ -39,6 +39,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
       super.viewWillDisappear(animated)
       unsubscribeFromKeyboardNotification(of: .willShow)
       unsubscribeFromKeyboardNotification(of: .willHide)
+   }
+   
+   @IBAction func decreaseFontSize(_ sender: UIBarButtonItem) {
+      if let font = topCaption.font {
+         topCaption.font = font.withSize(font.pointSize - 5.0)
+         bottomCaption.font = font.withSize(font.pointSize - 5.0)
+      }
+   }
+   
+   @IBAction func increaseFontSize(_ sender: UIBarButtonItem) {
+      if let font = topCaption.font {
+         topCaption.font = font.withSize(font.pointSize + 5.0)
+         bottomCaption.font = font.withSize(font.pointSize + 5.0)
+      }
+   }
+   
+   @IBAction func fontButtonTapped(_ sender: UIBarButtonItem) {
+      let fontPicker = UIFontPickerViewController()
+      fontPicker.delegate = self
+      present(fontPicker, animated: true, completion: nil)
    }
    
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
@@ -154,5 +174,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
       textField.resignFirstResponder()
       return true
+   }
+   
+   // MARK: - UIFontPickerViewControllerDelegate
+   
+   func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
+      if let fontDescriptor = viewController.selectedFontDescriptor {
+         let font = UIFont(descriptor: fontDescriptor, size: 0.0)
+         topCaption.font = font
+         bottomCaption.font = font
+      }
    }
 }
