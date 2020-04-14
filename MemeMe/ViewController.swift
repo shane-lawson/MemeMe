@@ -180,7 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
       if let fontDescriptor = viewController.selectedFontDescriptor {
-         let font = UIFont(descriptor: fontDescriptor, size: 0.0)
+         let font = UIFont(descriptor: fontDescriptor, size: 40.0)
          topCaption.font = font
          bottomCaption.font = font
       }
