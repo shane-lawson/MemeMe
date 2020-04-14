@@ -115,6 +115,7 @@
                         <outlet property="bottomCaption" destination="Z13-38-qdl" id="f4L-2e-4jM"/>
                         <outlet property="cameraButton" destination="1Ks-IS-PjZ" id="Veh-tJ-nfC"/>
                         <outlet property="imageView" destination="N1X-DS-DED" id="MUy-7s-RuB"/>
+                        <outlet property="shareButton" destination="Iei-sm-dHC" id="f8K-4K-UrR"/>
                         <outlet property="topCaption" destination="ZZK-t9-jh8" id="MWf-5p-peO"/>
                         <outletCollection property="toolbars" destination="XoF-Pi-SdX" collectionClass="NSMutableArray" id="Oco-q3-GNQ"/>
                         <outletCollection property="toolbars" destination="DRt-3P-H8k" collectionClass="NSMutableArray" id="Bci-0c-g01"/>

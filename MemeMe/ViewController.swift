@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    @IBOutlet weak var bottomCaption: UITextField!
    @IBOutlet weak var imageView: UIImageView!
    @IBOutlet weak var cameraButton: UIBarButtonItem!
+   @IBOutlet weak var shareButton: UIBarButtonItem!
    @IBOutlet var toolbars: [UIToolbar]!
    
    enum KeyboardNotificationType {
@@ -30,6 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+      shareButton.isEnabled = false
       imageView.contentMode = .scaleAspectFit
       subscribeToKeyboardNotification(of: .willShow)
       subscribeToKeyboardNotification(of: .willHide)
@@ -82,6 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
       topCaption.text = "TOP"
       bottomCaption.text = "BOTTOM"
       imageView.image = nil
+      shareButton.isEnabled = false
    }
    
    @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
@@ -157,6 +160,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       if let image = info[.originalImage] as? UIImage {
          imageView.image = image
+         shareButton.isEnabled = true
       }
       dismiss(animated: true, completion: nil)
    }
