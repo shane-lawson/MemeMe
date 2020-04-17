@@ -65,7 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
       toolbars.forEach {$0.isHidden = true}
-      UIGraphicsBeginImageContext(view.frame.size)
+      UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom))
       view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
       let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       UIGraphicsEndImageContext()

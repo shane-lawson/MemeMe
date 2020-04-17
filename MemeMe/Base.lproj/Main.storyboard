@@ -18,6 +18,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-DS-DED">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZK-t9-jh8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="49.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-Pi-SdX" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
@@ -54,11 +59,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z13-38-qdl">
-                                <rect key="frame" x="0.0" y="768.5" width="414" height="49.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRt-3P-H8k" userLabel="Bottom Toolbar">
                                 <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <constraints>
@@ -80,33 +80,29 @@
                                     <barButtonItem systemItem="flexibleSpace" id="n17-i5-2zN"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZK-t9-jh8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="49.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z13-38-qdl">
+                                <rect key="frame" x="0.0" y="768.5" width="414" height="49.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Z13-38-qdl" firstAttribute="bottom" secondItem="DRt-3P-H8k" secondAttribute="top" id="6Gh-EH-hOU"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7YE-0w-c1Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N1X-DS-DED" secondAttribute="bottom" id="Dgn-Ak-cqT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N1X-DS-DED" secondAttribute="bottom" id="EYG-7O-rd9"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HLV-6h-Ptc"/>
                             <constraint firstItem="Z13-38-qdl" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="SUY-QY-6AL"/>
                             <constraint firstItem="Z13-38-qdl" firstAttribute="leading" secondItem="N1X-DS-DED" secondAttribute="leading" id="XUy-ry-FQ9"/>
                             <constraint firstItem="ZZK-t9-jh8" firstAttribute="leading" secondItem="N1X-DS-DED" secondAttribute="leading" id="Xl4-Nv-CZ6"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YEQ-1h-wyY"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="top" secondItem="ZZK-t9-jh8" secondAttribute="top" constant="-44" id="bWm-O9-PvE"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cqv-gh-AW2"/>
-                            <constraint firstItem="Z13-38-qdl" firstAttribute="bottom" secondItem="N1X-DS-DED" secondAttribute="bottom" constant="-44" id="gAW-tn-iGn"/>
-                            <constraint firstItem="ZZK-t9-jh8" firstAttribute="centerX" secondItem="N1X-DS-DED" secondAttribute="centerX" id="gbp-tA-joB"/>
-                            <constraint firstItem="Z13-38-qdl" firstAttribute="centerX" secondItem="N1X-DS-DED" secondAttribute="centerX" id="hVi-Lk-sEz"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" priority="250" id="pAU-hu-o1s"/>
+                            <constraint firstItem="ZZK-t9-jh8" firstAttribute="top" secondItem="XoF-Pi-SdX" secondAttribute="bottom" id="nZD-f5-uUX"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qts-vz-eIt"/>
                             <constraint firstItem="N1X-DS-DED" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rTn-cc-hy9"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t62-02-O5e"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" priority="250" id="wbn-i7-HE8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="xP1-nx-fkF"/>
                             <constraint firstItem="ZZK-t9-jh8" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="ygk-fW-vwi"/>
+                            <constraint firstItem="N1X-DS-DED" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zNE-RR-OA1"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zf2-lw-Zes"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
