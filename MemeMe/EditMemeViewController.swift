@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EditMemeViewController.swift
 //  MemeMe
 //
 //  Created by Shane Lawson on 4/9/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate {
+class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate {
    
    enum KeyboardNotificationType {
       case willShow
