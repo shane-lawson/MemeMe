@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View-->
+        <!--Sent Memes Collection View Controller-->
         <scene sceneID="IM9-RR-jPH">
             <objects>
-                <collectionViewController id="Ni7-js-vSR" sceneMemberID="viewController">
+                <collectionViewController id="Ni7-js-vSR" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="48u-ha-Av6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,13 +37,13 @@
                             <outlet property="delegate" destination="Ni7-js-vSR" id="yoU-Kn-SxI"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection View" id="QPq-lN-Rge"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" id="QPq-lN-Rge"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sv4-NU-6ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794" y="181"/>
         </scene>
-        <!--Table View-->
+        <!--Sent Memes Table View Controller-->
         <scene sceneID="LRM-BR-KbC">
             <objects>
                 <tableViewController id="cZb-um-Dlh" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                             <outlet property="delegate" destination="cZb-um-Dlh" id="t1f-Wj-XHO"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table View" id="9hW-vT-yNk"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" id="9hW-vT-yNk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-rq-PWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,9 +223,11 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="collection_30x30" width="30" height="30.5"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="table_30x30" width="30" height="30"/>
         <image name="textformat" catalog="system" width="128" height="80"/>
     </resources>
 </document>
