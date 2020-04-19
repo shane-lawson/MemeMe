@@ -11,10 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+   // add shared Memes model array
+   var memes = [Meme]()
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
+      
+      //add test data to memes array
+      let testData = TestData()
+      memes.append(contentsOf: testData.memes)
       return true
    }
 
