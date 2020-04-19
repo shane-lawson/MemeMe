@@ -8,6 +8,13 @@
 
 import UIKit
 
+class SentMemesTableViewCell: UITableViewCell {
+   
+   @IBOutlet weak var label: UILabel!
+   @IBOutlet weak var memeImageView: UIImageView!
+   
+}
+
 class SentMemesTableViewController: UITableViewController {
 
    var memes: [Meme] {
@@ -21,8 +28,6 @@ class SentMemesTableViewController: UITableViewController {
       // Uncomment the following line to preserve selection between presentations
       // self.clearsSelectionOnViewWillAppear = false
 
-      // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-      // self.navigationItem.rightBarButtonItem = self.editButtonItem
    }
 
    // MARK: - UITableViewDataSource
@@ -32,12 +37,13 @@ class SentMemesTableViewController: UITableViewController {
    }
 
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell", for: indexPath)
       let meme = memes[indexPath.row]
-      
-      cell.textLabel!.text = "\(meme.topCaption) \(meme.bottomCaption)"
-      cell.imageView!.image = meme.memedImage
-
+      let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell", for: indexPath)
+      if let memeCell = cell as? SentMemesTableViewCell {
+         memeCell.label.text = "\(meme.topCaption) \(meme.bottomCaption)"
+         memeCell.memeImageView.image = meme.memedImage
+         return memeCell
+      }
       return cell
    }
 
