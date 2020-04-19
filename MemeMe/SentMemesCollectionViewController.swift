@@ -8,7 +8,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "memeCollectionViewCell"
+
+class SentMemesCollectionViewCell: UICollectionViewCell {
+    
+   @IBOutlet weak var imageView: UIImageView!
+   
+}
 
 class SentMemesCollectionViewController: UICollectionViewController {
 
@@ -23,9 +29,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
       // Uncomment the following line to preserve selection between presentations
       // self.clearsSelectionOnViewWillAppear = false
 
-      // Register cell classes
-      self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
       // Do any additional setup after loading the view.
    }
 
@@ -39,28 +42,24 @@ class SentMemesCollectionViewController: UICollectionViewController {
    }
    */
 
-   // MARK: UICollectionViewDataSource
-
-   override func numberOfSections(in collectionView: UICollectionView) -> Int {
-      // #warning Incomplete implementation, return the number of sections
-      return 0
-   }
-
+   // MARK: - UICollectionViewDataSource
 
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      // #warning Incomplete implementation, return the number of items
-      return 0
+      return memes.count
    }
 
    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+      let meme = memes[indexPath.item]
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-
-      // Configure the cell
-
+      if let myCell = cell as? SentMemesCollectionViewCell {
+         myCell.imageView.image = meme.memedImage
+         myCell.imageView.contentMode = .scaleAspectFill
+         return myCell
+      }
       return cell
    }
 
-   // MARK: UICollectionViewDelegate
+   // MARK: - UICollectionViewDelegate
 
    /*
    // Uncomment this method to specify if the specified item should be highlighted during tracking
