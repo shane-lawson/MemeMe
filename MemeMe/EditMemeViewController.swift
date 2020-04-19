@@ -89,11 +89,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    }
    
    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-      // revert to initial state
-      topCaption.text = "TOP"
-      bottomCaption.text = "BOTTOM"
-      imageView.image = nil
-      shareButton.isEnabled = false
+      dismiss(animated: true, completion: nil)
    }
    
    @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
