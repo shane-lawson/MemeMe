@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate {
-
+   
+   enum KeyboardNotificationType {
+      case willShow
+      case willHide
+   }
+   
+   // MARK: - IBOutlets
+   
    @IBOutlet weak var topCaption: UITextField!
    @IBOutlet weak var bottomCaption: UITextField!
    @IBOutlet weak var imageView: UIImageView!
@@ -17,10 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    @IBOutlet weak var shareButton: UIBarButtonItem!
    @IBOutlet var toolbars: [UIToolbar]!
    
-   enum KeyboardNotificationType {
-      case willShow
-      case willHide
-   }
+   // MARK: - Overrides
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -42,6 +46,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
       unsubscribeFromKeyboardNotification(of: .willShow)
       unsubscribeFromKeyboardNotification(of: .willHide)
    }
+   
+   //MARK: - IBActions
    
    @IBAction func decreaseFontSize(_ sender: UIBarButtonItem) {
       if let font = topCaption.font {
@@ -65,12 +71,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
       toolbars.forEach {$0.isHidden = true}
+      // create memedImage by capturing view hierachy drawn in image context
       UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom))
       view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
       let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       UIGraphicsEndImageContext()
       toolbars.forEach {$0.isHidden = false}
       
+      // create Activity View Controller and save memedImage upon completion
       let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
       activityViewController.completionWithItemsHandler = { _, completed, _, _ in
          if completed {
@@ -81,6 +89,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    }
    
    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+      // revert to initial state
       topCaption.text = "TOP"
       bottomCaption.text = "BOTTOM"
       imageView.image = nil
@@ -94,6 +103,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    @IBAction func albumButtonTapped(_ sender: UIBarButtonItem) {
       present(createImagePickerControllerWith(source: .photoLibrary), animated: true, completion: nil)
    }
+   
+   // MARK: - Helper funcs
    
    fileprivate func saveMeme(_ memedImage: UIImage) {
       _ = Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage)

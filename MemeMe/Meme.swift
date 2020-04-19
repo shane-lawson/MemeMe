@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Meme model object to store saved memes
 struct Meme {
    let topCaption: String
    let bottomCaption: String
