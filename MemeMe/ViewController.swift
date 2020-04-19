@@ -156,7 +156,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
    
    @objc fileprivate func keyboardWillHide(_ notification: Notification) {
       if bottomCaption.isEditing {
-         view.frame.origin.y += getKeyboardHeight(notification)
+         view.frame.origin.y = 0
       }
    }
    
