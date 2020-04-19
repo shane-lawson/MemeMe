@@ -12,6 +12,11 @@ private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
 
+   var memes: [Meme] {
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      return appDelegate.memes
+   }
+   
    override func viewDidLoad() {
       super.viewDidLoad()
 
