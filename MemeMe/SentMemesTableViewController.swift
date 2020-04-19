@@ -25,21 +25,21 @@ class SentMemesTableViewController: UITableViewController {
       // self.navigationItem.rightBarButtonItem = self.editButtonItem
    }
 
-   // MARK: - Table view data source
+   // MARK: - UITableViewDataSource
 
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 0
+      return memes.count
    }
 
-   /*
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-      // Configure the cell...
+      let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell", for: indexPath)
+      let meme = memes[indexPath.row]
+      
+      cell.textLabel!.text = "\(meme.topCaption) \(meme.bottomCaption)"
+      cell.imageView!.image = meme.memedImage
 
       return cell
    }
-   */
 
    /*
    // Override to support conditional editing of the table view.
