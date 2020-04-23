@@ -109,14 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-DS-DED">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZK-t9-jh8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="49.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-Pi-SdX" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <constraints>
@@ -145,7 +137,7 @@
                                             <action selector="increaseFontSize:" destination="BYZ-38-t0r" id="Klq-ys-uAq"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JlZ-e4-zIO"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xOY-ky-Mci"/>
                                     <barButtonItem title="Cancel" id="Ylr-sL-xV8">
                                         <connections>
                                             <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" id="jWs-gz-bef"/>
@@ -153,6 +145,28 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yo-9m-NoO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFT-16-RPp">
+                                        <rect key="frame" x="40" y="38" width="334" height="645"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8VQ-sm-3Q8">
+                                        <rect key="frame" x="40" y="38" width="334" height="38.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMw-Od-q7V">
+                                        <rect key="frame" x="40" y="640" width="334" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRt-3P-H8k" userLabel="Bottom Toolbar">
                                 <rect key="frame" x="0.0" y="764" width="414" height="44"/>
                                 <constraints>
@@ -174,47 +188,37 @@
                                     <barButtonItem systemItem="flexibleSpace" id="n17-i5-2zN"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z13-38-qdl">
-                                <rect key="frame" x="0.0" y="714.5" width="414" height="49.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Z13-38-qdl" firstAttribute="bottom" secondItem="DRt-3P-H8k" secondAttribute="top" id="6Gh-EH-hOU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Yo-9m-NoO" secondAttribute="trailing" id="2Gk-Cm-bB3"/>
+                            <constraint firstItem="DRt-3P-H8k" firstAttribute="top" secondItem="1Yo-9m-NoO" secondAttribute="bottom" id="5bG-bt-Fcl"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7YE-0w-c1Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N1X-DS-DED" secondAttribute="bottom" id="EYG-7O-rd9"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HLV-6h-Ptc"/>
-                            <constraint firstItem="Z13-38-qdl" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="SUY-QY-6AL"/>
-                            <constraint firstItem="Z13-38-qdl" firstAttribute="leading" secondItem="N1X-DS-DED" secondAttribute="leading" id="XUy-ry-FQ9"/>
-                            <constraint firstItem="ZZK-t9-jh8" firstAttribute="leading" secondItem="N1X-DS-DED" secondAttribute="leading" id="Xl4-Nv-CZ6"/>
+                            <constraint firstItem="1Yo-9m-NoO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S6h-It-RL3"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cqv-gh-AW2"/>
-                            <constraint firstItem="ZZK-t9-jh8" firstAttribute="top" secondItem="XoF-Pi-SdX" secondAttribute="bottom" id="nZD-f5-uUX"/>
                             <constraint firstItem="DRt-3P-H8k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qts-vz-eIt"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rTn-cc-hy9"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t62-02-O5e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="xP1-nx-fkF"/>
-                            <constraint firstItem="ZZK-t9-jh8" firstAttribute="trailing" secondItem="N1X-DS-DED" secondAttribute="trailing" id="ygk-fW-vwi"/>
-                            <constraint firstItem="N1X-DS-DED" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zNE-RR-OA1"/>
+                            <constraint firstItem="1Yo-9m-NoO" firstAttribute="top" secondItem="XoF-Pi-SdX" secondAttribute="bottom" id="xtU-fA-Pjz"/>
                             <constraint firstItem="XoF-Pi-SdX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zf2-lw-Zes"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="8aU-Tg-EIZ"/>
                     <connections>
-                        <outlet property="bottomCaption" destination="Z13-38-qdl" id="f4L-2e-4jM"/>
+                        <outlet property="bottomCaption" destination="BMw-Od-q7V" id="6dh-pK-V97"/>
                         <outlet property="cameraButton" destination="1Ks-IS-PjZ" id="Veh-tJ-nfC"/>
-                        <outlet property="imageView" destination="N1X-DS-DED" id="MUy-7s-RuB"/>
+                        <outlet property="imageView" destination="NFT-16-RPp" id="veM-Px-E41"/>
+                        <outlet property="memeView" destination="1Yo-9m-NoO" id="iws-eD-Clb"/>
                         <outlet property="shareButton" destination="Iei-sm-dHC" id="f8K-4K-UrR"/>
-                        <outlet property="topCaption" destination="ZZK-t9-jh8" id="MWf-5p-peO"/>
+                        <outlet property="topCaption" destination="8VQ-sm-3Q8" id="OKH-JQ-SsU"/>
                         <outletCollection property="toolbars" destination="XoF-Pi-SdX" collectionClass="NSMutableArray" id="Oco-q3-GNQ"/>
                         <outletCollection property="toolbars" destination="DRt-3P-H8k" collectionClass="NSMutableArray" id="Bci-0c-g01"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1783" y="-457"/>
+            <point key="canvasLocation" x="-1784.057971014493" y="-457.36607142857139"/>
         </scene>
         <!--Sent Memes Table View Controller-->
         <scene sceneID="W4m-9g-eHR">
