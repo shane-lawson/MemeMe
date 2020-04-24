@@ -17,7 +17,7 @@ class SentMemesCollectionViewCell: UICollectionViewCell {
    // add curved corners to our cells to match tableview a little more
    override func draw(_ rect: CGRect) {
       super.draw(rect)
-      self.layer.cornerRadius = 9.0
+      imageView.layer.cornerRadius = 10
    }
 }
 

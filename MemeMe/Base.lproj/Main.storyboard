@@ -17,31 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="18" sectionInsetReference="layoutMargins" id="8oi-Dd-cbo">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="18" sectionInsetReference="safeArea" id="8oi-Dd-cbo">
+                            <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="35" maxX="20" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCollectionViewCell" id="lFc-2s-hfb" customClass="SentMemesCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="128" height="128"/>
+                                <rect key="frame" x="20" y="35" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8sf-dx-TOV">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n1V-tG-oTZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="128" id="Po6-h5-pPj"/>
-                                                <constraint firstAttribute="height" constant="128" id="y4k-hR-77B"/>
-                                            </constraints>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="n1V-tG-oTZ" firstAttribute="centerY" secondItem="8sf-dx-TOV" secondAttribute="centerY" id="Sel-jK-g8G"/>
-                                        <constraint firstItem="n1V-tG-oTZ" firstAttribute="centerX" secondItem="8sf-dx-TOV" secondAttribute="centerX" id="VoF-Dg-9hE"/>
+                                        <constraint firstItem="n1V-tG-oTZ" firstAttribute="top" secondItem="8sf-dx-TOV" secondAttribute="top" id="VW1-DV-dVe"/>
+                                        <constraint firstAttribute="trailing" secondItem="n1V-tG-oTZ" secondAttribute="trailing" id="bXd-Ly-knX"/>
+                                        <constraint firstAttribute="bottom" secondItem="n1V-tG-oTZ" secondAttribute="bottom" id="c7z-hr-X74"/>
+                                        <constraint firstItem="n1V-tG-oTZ" firstAttribute="leading" secondItem="8sf-dx-TOV" secondAttribute="leading" id="vcr-48-cMa"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -83,7 +81,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="5eX-tF-hEZ">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="fCV-0E-7d8">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="HpJ-Yf-ENW"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="HpJ-Yf-ENW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -237,13 +235,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-oX-l6Z">
-                                            <rect key="frame" x="20" y="0.0" width="334" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="128"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upv-mC-CYQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="173" height="128"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgX-L6-Vd0">
-                                                    <rect key="frame" x="171" y="54" width="163" height="20.5"/>
+                                                    <rect key="frame" x="181" y="54" width="173" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -258,7 +256,7 @@
                                         <constraint firstAttribute="bottom" secondItem="kW0-oX-l6Z" secondAttribute="bottom" id="7xO-57-CfI"/>
                                         <constraint firstAttribute="trailing" secondItem="kW0-oX-l6Z" secondAttribute="trailing" constant="20" symbolic="YES" id="Jsr-tp-QXS"/>
                                         <constraint firstItem="kW0-oX-l6Z" firstAttribute="top" secondItem="Msv-Z3-2RJ" secondAttribute="top" id="nT5-5x-qdE"/>
-                                        <constraint firstItem="kW0-oX-l6Z" firstAttribute="leading" secondItem="Msv-Z3-2RJ" secondAttribute="leading" constant="20" symbolic="YES" id="oub-ov-rml"/>
+                                        <constraint firstItem="kW0-oX-l6Z" firstAttribute="leading" secondItem="Msv-Z3-2RJ" secondAttribute="leading" id="oub-ov-rml"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
