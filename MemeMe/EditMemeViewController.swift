@@ -78,7 +78,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-      shareButton.isEnabled = false
+      shareButton.isEnabled = imageView.image != nil
       imageView.contentMode = .scaleAspectFit
       subscribeToNotification(of: .keyboardWillShow)
       subscribeToNotification(of: .keyboardWillHide)
@@ -149,6 +149,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    
    fileprivate func saveMeme(_ memedImage: UIImage) {
       appDelegate.memes.append(Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage))
+      toolbars.first?.items?.last?.title = "Done"
    }
    
    fileprivate func createImagePickerControllerWith(source: UIImagePickerController.SourceType) -> UIImagePickerController {
