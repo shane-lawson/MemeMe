@@ -17,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
       
-      //add test data to memes array
-      let testData = TestData()
-      memes.append(contentsOf: testData.memes)
       return true
    }
 

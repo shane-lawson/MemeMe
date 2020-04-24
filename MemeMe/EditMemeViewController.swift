@@ -118,7 +118,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
       toolbars.forEach {$0.isHidden = true}
       // create memedImage by capturing view hierachy drawn in image context
-      UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom))
+      UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom+view.safeAreaInsets.top))
       view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
       let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       UIGraphicsEndImageContext()

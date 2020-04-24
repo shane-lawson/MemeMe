@@ -44,6 +44,7 @@ class SentMemesTableViewController: UITableViewController {
       if let memeCell = cell as? SentMemesTableViewCell {
          memeCell.label.text = "\(meme.topCaption) \(meme.bottomCaption)"
          memeCell.memeImageView.image = meme.memedImage
+         memeCell.memeImageView.contentMode = .scaleAspectFill
          return memeCell
       }
       return cell
