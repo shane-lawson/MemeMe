@@ -29,7 +29,7 @@ class SentMemesTableViewController: UITableViewController {
       // self.clearsSelectionOnViewWillAppear = false
 
    }
-
+   
    // MARK: - UITableViewDataSource
 
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +47,13 @@ class SentMemesTableViewController: UITableViewController {
       return cell
    }
 
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let meme = memes[indexPath.row]
+      let detailVC = storyboard?.instantiateViewController(withIdentifier: "memeDetailViewController") as! MemeDetailViewController
+      detailVC.meme = meme
+      show(detailVC, sender: self)
+   }
+   
    /*
    // Override to support conditional editing of the table view.
    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

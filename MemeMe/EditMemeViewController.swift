@@ -41,6 +41,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    // MARK: - Properites
    
    var imageViewConstraints = [NSLayoutConstraint]()
+   var meme: Meme?
    
    // MARK: - IBOutlets
    
@@ -57,6 +58,13 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      if let meme = meme {
+         imageView.image = meme.originalImage
+         topCaption.text = meme.topCaption
+         bottomCaption.text = meme.bottomCaption
+      }
+      
       configureMemeCaption(topCaption)
       configureMemeCaption(bottomCaption)
       

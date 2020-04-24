@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34145B58245270EA0065C50B /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34145B57245270EA0065C50B /* MemeDetailViewController.swift */; };
 		3475AC32243FA775006D25B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3475AC31243FA775006D25B2 /* AppDelegate.swift */; };
 		3475AC34243FA775006D25B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3475AC33243FA775006D25B2 /* SceneDelegate.swift */; };
 		3475AC36243FA775006D25B2 /* EditMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3475AC35243FA775006D25B2 /* EditMemeViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34145B57245270EA0065C50B /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		3475AC2E243FA775006D25B2 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3475AC31243FA775006D25B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3475AC33243FA775006D25B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				3475AC33243FA775006D25B2 /* SceneDelegate.swift */,
 				3475AC35243FA775006D25B2 /* EditMemeViewController.swift */,
 				3475AC37243FA775006D25B2 /* Main.storyboard */,
+				34145B57245270EA0065C50B /* MemeDetailViewController.swift */,
 				34840D8B244CE93E00FAF100 /* SentMemesTableViewController.swift */,
 				34840D8D244CE96F00FAF100 /* SentMemesCollectionViewController.swift */,
 				3475AC472440EAE5006D25B2 /* Meme.swift */,
@@ -157,6 +160,7 @@
 				3475AC32243FA775006D25B2 /* AppDelegate.swift in Sources */,
 				34840D8A244CDE8C00FAF100 /* TestData.swift in Sources */,
 				3475AC34243FA775006D25B2 /* SceneDelegate.swift in Sources */,
+				34145B58245270EA0065C50B /* MemeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
