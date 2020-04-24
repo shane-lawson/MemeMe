@@ -22,6 +22,11 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      memeView.layer.borderWidth = 2.0
+      memeView.layer.borderColor = UIColor.orange.cgColor
+      imageView.layer.borderWidth = 1.0
+      imageView.layer.borderColor = UIColor.green.cgColor
+      
       imageView.image = meme.originalImage
       topCaption.text = meme.topCaption
       bottomCaption.text = meme.bottomCaption
@@ -32,6 +37,14 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
       setConstraints()
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange(_:)), name: UIDevice.orientationDidChangeNotification, object: nil)
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+   }
+   
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       switch segue.identifier {
       case "detailToEdit":
@@ -40,6 +53,10 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
       default:
          break
       }
+   }
+   
+   @objc fileprivate func orientationDidChange(_ notificaiton: Notification) {
+      updateImageConstraints()
    }
    
    fileprivate func configureMemeCaption(_ textField: UITextField) {
