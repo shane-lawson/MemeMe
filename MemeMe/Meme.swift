@@ -15,11 +15,13 @@ struct Meme {
    let bottomCaption: String
    let originalImage: UIImage
    let memedImage: UIImage
+   let font: UIFont
    
-   init(topCaption: String, bottomCaption: String, originalImage: UIImage, memedImage: UIImage) {
+   init(topCaption: String, bottomCaption: String, originalImage: UIImage, memedImage: UIImage, font: UIFont) {
       self.topCaption = topCaption
       self.bottomCaption = bottomCaption
       self.originalImage = originalImage
       self.memedImage = memedImage
+      self.font = font
    }
 }

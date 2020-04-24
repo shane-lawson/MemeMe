@@ -118,8 +118,10 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
       toolbars.forEach {$0.isHidden = true}
       // create memedImage by capturing view hierachy drawn in image context
       UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom))
+      memeView.backgroundColor = .systemGray6
       view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
       let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+      memeView.backgroundColor = .systemBackground
       UIGraphicsEndImageContext()
       toolbars.forEach {$0.isHidden = false}
       
@@ -148,7 +150,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    // MARK: - Helper funcs
    
    fileprivate func saveMeme(_ memedImage: UIImage) {
-      appDelegate.memes.append(Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage))
+      appDelegate.memes.append(Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage, font: topCaption.font!))
       toolbars.first?.items?.last?.title = "Done"
    }
    
@@ -165,7 +167,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
          .strokeColor: UIColor.black,
          .foregroundColor: UIColor.white,
          .strokeWidth: -5.0,
-         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+         .font: meme != nil ? meme!.font : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
       ]
       textField.adjustsFontSizeToFitWidth = true
       textField.minimumFontSize = 17.0

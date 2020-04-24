@@ -14,7 +14,7 @@ struct TestData {
    
    init() {
       for i in 1...5 {
-         let newMeme = Meme(topCaption: "THING \(i)", bottomCaption: "OTHER THING \(i)", originalImage: UIImage(named: "test_image_\(i)")!, memedImage: UIImage(named: "test_meme_\(i)")!)
+         let newMeme = Meme(topCaption: "THING \(i)", bottomCaption: "OTHER THING \(i)", originalImage: UIImage(named: "test_image_\(i)")!, memedImage: UIImage(named: "test_meme_\(i)")!, font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!)
          memes.append(newMeme)
       }
    }

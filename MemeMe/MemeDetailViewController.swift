@@ -65,7 +65,7 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
          .strokeColor: UIColor.black,
          .foregroundColor: UIColor.white,
          .strokeWidth: -5.0,
-         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+         .font: meme != nil ? meme!.font : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
       ]
       textField.adjustsFontSizeToFitWidth = true
       textField.minimumFontSize = 17.0
