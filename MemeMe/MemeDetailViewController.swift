@@ -22,11 +22,6 @@ class MemeDetailViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      memeView.layer.borderWidth = 2.0
-      memeView.layer.borderColor = UIColor.orange.cgColor
-      imageView.layer.borderWidth = 1.0
-      imageView.layer.borderColor = UIColor.green.cgColor
-      
       imageView.image = meme.originalImage
       topCaption.text = meme.topCaption
       bottomCaption.text = meme.bottomCaption
