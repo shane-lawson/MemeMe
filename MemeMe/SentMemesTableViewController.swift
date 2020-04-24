@@ -29,6 +29,7 @@ class SentMemesTableViewController: UITableViewController {
    
    // MARK: - UITableViewDataSource
 
+   // I understand this is technically a little incorrect, but I like the effect the grouped sections have, so I've switched to using sections as "rows"
    override func numberOfSections(in tableView: UITableView) -> Int {
       return memes.count
    }

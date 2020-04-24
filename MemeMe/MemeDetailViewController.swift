@@ -8,6 +8,11 @@
 
 import UIKit
 
+// This class is nearly identical to EditMemeController, as far as view and layout is concerned.
+// EditMemeViewController has all the extra functionality, whereas this just shows the same meme and disables editing.
+// I wanted to pull out the imageView and captions into their own "memeView" class, so instaances of the same class could be used to display the meme in both this and EditMemeViewController.
+// I got lost in trying to subclass UIView and the xib files and all sorts, so here's a bit of duplicate laying out constraints, a bummer, but oh well.
+
 class MemeDetailViewController: UIViewController, UITextFieldDelegate {
    
    var imageViewConstraints = [NSLayoutConstraint]()

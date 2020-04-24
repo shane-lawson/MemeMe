@@ -10,6 +10,7 @@ import UIKit
 
 class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate, UIFontPickerViewControllerDelegate {
    
+   // A helpful little enum for subscribing/unsubscribing to Notifications
    enum NotificationType {
       case keyboardWillShow
       case keyboardWillHide
@@ -40,6 +41,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    
    // MARK: - Properites
    
+   // Constraints to be updated, so that captions are dynamic to image/orientation
    var imageViewConstraints = [NSLayoutConstraint]()
    var meme: Meme?
    var appDelegate: AppDelegate {
@@ -57,7 +59,6 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    @IBOutlet weak var shareButton: UIBarButtonItem!
    @IBOutlet var toolbars: [UIToolbar]!
 
-   
    // MARK: - Overrides
    
    override func viewDidLoad() {
@@ -165,6 +166,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
          .strokeColor: UIColor.black,
          .foregroundColor: UIColor.white,
          .strokeWidth: -5.0,
+         // load font if previously saved meme, or default font
          .font: meme != nil ? meme!.font : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
       ]
       textField.adjustsFontSizeToFitWidth = true
