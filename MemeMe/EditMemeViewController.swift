@@ -42,6 +42,10 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    
    var imageViewConstraints = [NSLayoutConstraint]()
    var meme: Meme?
+   var appDelegate: AppDelegate {
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      return appDelegate
+   }
    
    // MARK: - IBOutlets
    
@@ -121,7 +125,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
       
       // create Activity View Controller and save memedImage upon completion
       let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-      activityViewController.completionWithItemsHandler = { _, completed, _, _ in
+      activityViewController.completionWithItemsHandler = { [unowned self] _, completed, _, _ in
          if completed {
             self.saveMeme(memedImage)
          }
@@ -144,7 +148,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
    // MARK: - Helper funcs
    
    fileprivate func saveMeme(_ memedImage: UIImage) {
-      _ = Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage)
+      appDelegate.memes.append(Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, originalImage: imageView.image!, memedImage: memedImage))
    }
    
    fileprivate func createImagePickerControllerWith(source: UIImagePickerController.SourceType) -> UIImagePickerController {

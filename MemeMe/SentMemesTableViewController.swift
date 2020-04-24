@@ -30,6 +30,11 @@ class SentMemesTableViewController: UITableViewController {
 
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      tableView.reloadData()
+   }
+   
    // MARK: - UITableViewDataSource
 
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
