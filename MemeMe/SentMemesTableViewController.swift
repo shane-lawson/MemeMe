@@ -29,12 +29,16 @@ class SentMemesTableViewController: UITableViewController {
    
    // MARK: - UITableViewDataSource
 
-   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   override func numberOfSections(in tableView: UITableView) -> Int {
       return memes.count
+   }
+   
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return 1
    }
 
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let meme = memes[indexPath.row]
+      let meme = memes[indexPath.section]
       let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell", for: indexPath)
       if let memeCell = cell as? SentMemesTableViewCell {
          memeCell.label.text = "\(meme.topCaption) \(meme.bottomCaption)"
