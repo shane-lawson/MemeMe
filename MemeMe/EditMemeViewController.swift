@@ -118,7 +118,7 @@ class EditMemeViewController: UIViewController, UIImagePickerControllerDelegate 
       toolbars.forEach {$0.isHidden = true}
       // create memedImage by capturing view hierachy drawn in image context
       UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height-view.safeAreaInsets.bottom))
-      memeView.backgroundColor = .systemGray6
+      memeView.backgroundColor = .darkGray
       view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
       let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
       memeView.backgroundColor = .systemBackground
